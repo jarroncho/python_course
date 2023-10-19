@@ -35,9 +35,6 @@ rank=sorted(rank,reverse=True)
 #將名次放進去
 for i in range(1,len(grade_list)):
     grade_list[i][7]=rank.index(grade_list[i][5])+1
-
-print('姓名\t國文\t英文\t數學\t理化\t總分\t平均\t名次')
-print('------------------------------------------------------------')
 for i in range(len(grade_list)):
     print(grade_list[i][0], end='\t')
     for j in range(1, len(grade_list[i])):
@@ -84,8 +81,6 @@ class grade:
         return self.grade_list
     
     def printdata(self):
-        print('姓名\t國文\t英文\t數學\t理化\t總分\t平均\t名次')
-        print('------------------------------------------------------------')
         for i in range(len(self.grade_list)):
             print(self.grade_list[i][0], end='\t')
             for j in range(1, len(self.grade_list[i])):
