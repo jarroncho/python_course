@@ -1,4 +1,4 @@
-#1090573鍾秀玲
+#1090573
 import openpyxl
 import pandas as pd
 
