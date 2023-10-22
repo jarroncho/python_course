@@ -1,68 +1,66 @@
+
 import openpyxl
-# oop
-class Grade:
-    def __init__(self, file_path: str, data_range: str):
-        workbook = openpyxl.load_workbook(file_path)
-        sheet = workbook[workbook.sheetnames[0]]
-        call_range = sheet[data_range]
-        self.data = list()
-        for row in sheet[data_range]:
-            row_value = list()
-            for cell in row:
-                row_value.append(cell.value)
-            self.data.append(row_value)
-        self.__set_sum_and_average()
-        self.__set_ranking()
-        # print(self.data)
+excel_file_path = 'C:\\Users\\吳任輝\\OneDrive\\桌面\\python\\grade_list.xlsx'
+workbook = openpyxl.load_workbook(excel_file_path)
+sheet_names = workbook.sheetnames
+sheet_name=sheet_names[0]
+print("Sheet names:", sheet_names)
+sheet = workbook[sheet_name]
+cell_range_pattern='c5:j12'
+cell_range = sheet[cell_range_pattern]
+a=[]
+grade_table=[]
+for i in cell_range:
+    line=[]
+    for j in i:
+        line.append(j.value)
+    grade_table.append(line)
+workbook.close()
+for i in range(1,8):
+    grade_table[i][5]=0
+    grade_table[i][6]=0
+    grade_table[i][7]=0
+    for j in range(1,5):
+        grade_table[i][5]+=grade_table[i][j]
+    a.append(grade_table[i][5])
+    grade_table[i][6]=grade_table[i][5]/4
+a.sort(reverse=True)
+for i in range(1,8):
+    for j in range(1,5):
+        grade_table[i][7]=a.index(grade_table[i][5])+1
+print(grade_table)
+class grade_table:
+    def __init__(self,import_excel):
+        self.import_excel=import_excel
+        workbook = openpyxl.load_workbook(excel_file_path)
+        sheet_names = workbook.sheetnames
+        sheet_name=sheet_names[0]
+        sheet = workbook[sheet_name]
+        cell_range_pattern='c5:j12'
+        cell_range = sheet[cell_range_pattern]
+        self.grade_table=[]
+        for i in cell_range:
+            line=[]
+            for j in i:
+                line.append(j.value)
+            self.grade_table.append(line)
         workbook.close()
-    def print_data(self):
-        for row in self.data:
-            print(row)
-    def __set_sum_and_average(self):
-        for row in self.data[1:]:
-            sum = 0
-            for score in row[1:5]:
-                sum += score
-            row[5] = sum
-            row[6] = sum / 4
-
-    def __set_ranking(self):
-        rank_dict = dict()
-        for i in range(1,len(self.data)):
-            rank_dict[i] = self.data[i][5]
-        rank_dict = sorted(rank_dict.items(), key=lambda kv: (kv[1], kv[0]), reverse=True)
-        for rank in range(len(rank_dict)):
-            self.data[rank_dict[rank][0]][7] = rank+1
-
-print("OOP")
-oop = Grade("../../teacher/w3/grade_list.xlsx", 'c5:j12')
-oop.print_data()
-
-# pop
-print("POP")
-workbook = openpyxl.load_workbook("../../teacher/w3/grade_list.xlsx")
-sheet = workbook[workbook.sheetnames[0]]
-call_range = sheet['c5:j12']
-data = list()
-for row in sheet['c5:j12']:
-    row_value = list()
-    for cell in row:
-        row_value.append(cell.value)
-    data.append(row_value)
-
-for row in data[1:]:
-    sum = 0
-    for score in row[1:5]:
-        sum += score
-    row[5] = sum
-    row[6] = sum / 4
-
-rank_dict = dict()
-for i in range(1, len(data)):
-    rank_dict[i] = data[i][5]
-rank_dict = sorted(rank_dict.items(), key=lambda kv: (kv[1], kv[0]), reverse=True)
-for rank in range(len(rank_dict)):
-    data[rank_dict[rank][0]][7] = rank + 1
-
-for row in data:
-    print(row)
+    def calculation(self):
+        a=[]
+        for i in range(1,8):
+            self.grade_table[i][5]=0
+            self.grade_table[i][6]=0
+            self.grade_table[i][7]=0
+            for j in range(1,5):
+                self.grade_table[i][5]+=self.grade_table[i][j]
+            a.append(self.grade_table[i][5])
+            self.grade_table[i][6]=self.grade_table[i][5]/4
+        a.sort(reverse=True)
+        for i in range(1,8):
+            for j in range(1,5):
+                self.grade_table[i][7]=a.index(self.grade_table[i][5])+1        
+    def print(self):
+        print(self.grade_table)
+mygrade=grade_table('C:\\Users\\吳任輝\\OneDrive\\桌面\\python\\grade_list.xlsx')
+mygrade.calculation()
+mygrade.print()
