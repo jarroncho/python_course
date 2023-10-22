@@ -17,7 +17,9 @@ class Gradelist:
     def show(self):
         pass
 
+
 class excel(Gradelist):
+
     def __init__(self,filename):
         self.filename=Path(filename)
 
@@ -25,7 +27,6 @@ class excel(Gradelist):
         workbook = openpyxl.load_workbook(self.filename)
         sheet_names=workbook.sheetnames
         sheet_name=sheet_names[0]
-        print("Sheet names:",sheet_names)
         sheet = workbook[sheet_name]      
         cell_range_pattern='c5:j12'        
         self.cell_values_2d=[]  
@@ -47,9 +48,11 @@ class excel(Gradelist):
                 grade_list_sort[i][7]=i+1
 
     def show(self):
-        print("2D Cell values:")
+        print("\n(Excel version) 2D Cell values:")
         for row_values in self.cell_values_2d:
             print(row_values)
+        
+
 
 class googlesheet(Gradelist):
     def __init__(self,filename):
@@ -76,31 +79,23 @@ class googlesheet(Gradelist):
             self.grade_list_data[i].append(aver)
         grade_list_sort = sorted(self.grade_list_data[1:], key=lambda x: x[5])
         for i in range(len(grade_list_sort)):    
-
             rank=i+1
             grade_list_sort[i].append(rank)
                 
-
     def show(self):
-        print("2D Cell values:")
+        print("\n(Google Sheet version) 2D Cell values:")
         for row_values in self.grade_list_data:
             print(row_values)
+        
 
-
-
-
-
-
-
-
+#excel
 excel_grade_list=excel('C:\\Users\\Girl\\Desktop\\grade_list.xlsx')
 excel_grade_list.get_the_data()
-
 excel_grade_list.calculate_the_data()
 excel_grade_list.show()
 
+#googlesheet
 googlesheet_grade_list=googlesheet('C:\\Users\\Girl\\Downloads\\pythonw4-90bc51374cbe.json')
 googlesheet_grade_list.get_the_data()
-
 googlesheet_grade_list.calculate_the_data()
 googlesheet_grade_list.show()
