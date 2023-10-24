@@ -2,18 +2,23 @@
 import gspread
 import openpyxl
 from pathlib import Path
+from abc import ABC, abstractmethod
 
-class Gradelist:
+class Gradelist(ABC):
 
+    @abstractmethod
     def __init__(self):
         pass
-
+    
+    @abstractmethod
     def get_the_data(self):
         pass
 
+    @abstractmethod
     def calculate_the_data(self):
         pass
-        
+
+    @abstractmethod   
     def show(self):
         pass
 
