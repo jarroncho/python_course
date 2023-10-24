@@ -1,4 +1,5 @@
 #pip install gspread oauth2client
+from pathlib import Path
 import gspread
 from abc import ABC, abstractmethod
 
@@ -25,7 +26,7 @@ class List1(ABC):
 
 class gradeList(List1):
     def __init__(self):
-        self.gc = gspread.service_account(filename='C:\python 程式設計\.json')
+        self.gc = gspread.service_account(filename=Path('C:\python 程式設計\.json'))
         self.sh = self.gc.open_by_url('https://docs.google.com/spreadsheets/d/1nqgiOHVyuIM1p4cBKUsi1HfmkaIhjIQdQYamGbkzOhE/edit#gid=0')
         self.cell_range_pattern='c5:j12'
         self.cell_range=self.sh.sheet1.get(self.cell_range_pattern)
