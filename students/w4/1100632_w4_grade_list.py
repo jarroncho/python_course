@@ -121,3 +121,5 @@ googlesheet=googledata()
 googlesheet.getdata(r'C:\Users\kmsh1\Desktop\python程式設計\python_course\teacher\w4\python_course_access_cred.json')
 googlesheet.sum_average_rank()
 googlesheet.printdata()   
+
+
