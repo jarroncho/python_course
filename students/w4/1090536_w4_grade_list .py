@@ -110,13 +110,13 @@ class gs_data(grade_list):
             print()
         print()
 
-#test
-excel_test = excel_data('D:/MyData/Desktop/PYTHON/python_course/teacher/w3/grade_list.xlsx')
+#testC:\Users\stanley\OneDrive\文件\GitHub\python_course\teacher
+excel_test = excel_data('C:/Users/stanley/OneDrive/文件/GitHub/python_course/teacher/w3/grade_list.xlsx')
 excel_test.get_data()
 excel_test.grade_list()
 excel_test.print()
 
-googlesheet_test = gs_data('D:/MyData/Desktop/PYTHON/python_course/teacher/w4/python_course_access_cred.json')
+googlesheet_test = gs_data('C:/Users/stanley/OneDrive/文件/GitHub/python_course/teacher/w4/python_course_access_cred.json')
 googlesheet_test.get_data()
 googlesheet_test.grade_list()
 googlesheet_test.print()
