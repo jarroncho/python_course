@@ -105,7 +105,7 @@ class GS_grade_list(base_grade_list):
 excel_test=excel_grade_list(excel_file_path)
 excel_test.get_grade_list()
 excel_test.calculate_sum_sort()
-excel_test.printing
+excel_test.printing()
 
 #testgs
 gs_test=GS_grade_list('D:\\github\\python_course\\teacher\\w4\\python_course_access_cred.json')
