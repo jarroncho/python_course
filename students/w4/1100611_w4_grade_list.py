@@ -49,8 +49,7 @@ class excel(Gradelist):
                 
         grade_list_sort = sorted(self.cell_values_2d[1:], key=lambda x: x[5])
         for i in range(len(grade_list_sort)):    
-            for j in range(1, len(grade_list_sort[i])):
-                grade_list_sort[i][7]=i+1
+            grade_list_sort[i][7]=len(grade_list_sort)-i
 
     def show(self):
         print("\n(Excel version) 2D Cell values:")
@@ -74,18 +73,14 @@ class googlesheet(Gradelist):
     def calculate_the_data(self):
         row_len=len(self.grade_list_data[0])
         for i in range(1,row_len):
-            self.grade_list_data[i][1]=int(self.grade_list_data[i][1])
-            self.grade_list_data[i][2]=int(self.grade_list_data[i][2])
-            self.grade_list_data[i][3]=int(self.grade_list_data[i][3])
-            self.grade_list_data[i][4]=int(self.grade_list_data[i][4])
-            sum=self.grade_list_data[i][1]+self.grade_list_data[i][2]+self.grade_list_data[i][3]+self.grade_list_data[i][4]
-            self.grade_list_data[i].append(sum)
-            aver=self.grade_list_data[i][5]/4
-            self.grade_list_data[i].append(aver)
+            sum=int(self.grade_list_data[i][1])+int(self.grade_list_data[i][2])+int(self.grade_list_data[i][3])+int(self.grade_list_data[i][4])
+            self.grade_list_data[i][5]=sum
+            aver=int(self.grade_list_data[i][5])/4
+            self.grade_list_data[i][6]=aver
         grade_list_sort = sorted(self.grade_list_data[1:], key=lambda x: x[5])
         for i in range(len(grade_list_sort)):    
-            rank=i+1
-            grade_list_sort[i].append(rank)
+            rank=len(grade_list_sort)-i
+            grade_list_sort[i][7]=rank
                 
     def show(self):
         print("\n(Google Sheet version) 2D Cell values:")
