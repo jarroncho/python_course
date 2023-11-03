@@ -125,7 +125,11 @@ if __name__ == "__main__":
     print('價格\t格局\t\t樓層\t說明')
     for i in range(4):
         print(f"{houses[i]['price']}\t{houses[i]['kind_name']}\t{houses[i]['floor_str']}\t{houses[i]['title']}")
-    # with open('house.json', 'w', encoding='utf-8') as f:
+    
+    for house in houses:
+        print(f"{house['price']}\t{house['kind_name']}\t{house['floor_str']}\t{house['title']}")
+
+
     #     f.write(json.dumps(houses))
 
     #house_detail = house591_spider.get_house_detail(houses[0]['post_id'])
