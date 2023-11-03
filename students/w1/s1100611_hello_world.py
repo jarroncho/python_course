@@ -2,7 +2,6 @@
 import sys;
 
 # hello world 
-62626
 
 # print hellowrld with variable 
 def hello():
