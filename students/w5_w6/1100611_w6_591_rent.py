@@ -29,8 +29,11 @@ for content in contents:
     #樓層和格局
     st = item.find("ul", {"class": "item-style"})
     std=st.find_all("li")
-    style=std[0].getText().strip()
-    floor=std[2].getText().strip()    
+    if len(std)==4:
+        style=std[1].getText().strip()
+    else:
+        style=' '
+    floor=std[-1].getText().strip()    
         
 
 
@@ -41,8 +44,6 @@ df = pd.DataFrame(result, columns=["價格", "格局","樓層","說明"])
 
 
 
-df.to_excel("C:\\Users\\Girl\\Desktop\\591_search.xlsx",
-                 sheet_name="台北",
-                 index=False)  # 匯出Excel檔案(不寫入資料索引值)
+df.to_excel("C:\\Users\\Girl\\Desktop\\591_search.xlsx",sheet_name="台北",index=False)  # 匯出Excel檔案(不寫入資料索引值)
 
 browser.quit()  # 關閉Chrome瀏覽器
