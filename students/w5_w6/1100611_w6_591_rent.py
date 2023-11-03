@@ -34,16 +34,10 @@ for content in contents:
     else:
         style=' '
     floor=std[-1].getText().strip()    
-        
 
-
-  
     result.append((price,style,floor,title,))
 
 df = pd.DataFrame(result, columns=["價格", "格局","樓層","說明"])
-
-
-
 df.to_excel("C:\\Users\\Girl\\Desktop\\591_search.xlsx",sheet_name="台北",index=False)  # 匯出Excel檔案(不寫入資料索引值)
 
 browser.quit()  # 關閉Chrome瀏覽器
