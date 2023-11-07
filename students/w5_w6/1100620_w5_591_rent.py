@@ -47,7 +47,7 @@ class House591Spider():
             params += '&region=1&kind=0'
         # 在 cookie 設定地區縣市，避免某些條件無法取得資料
 
-        print(f"params={params}")
+        # print(f"params={params}")
         while page < want_page:
             params += f'&firstRow={page*30}'
             r = s.get(url, params=params, headers=headers)
