@@ -123,12 +123,12 @@ if __name__ == "__main__":
     }
     # total_count, houses = house591_spider.search(filter_params, sort_params, want_page=1)
     total_count, houses = house591_spider.search(filter_params)
-    print('\n\n搜尋結果房屋總數：', total_count)
+    # print('\n\n搜尋結果房屋總數：', total_count)
 
     print('價格\t格局\t樓層\t\t說明')
     for house in houses:
         print(
-            f"{house['price']}\t{house['room_str']}\t\t{house['floor_str']}\t{house['title']}")
+            f"{house['price']}\t{house['room_str']}\t{house['floor_str']}\t\t{house['title']}")
     # with open('house.json', 'w', encoding='utf-8') as f:
     #     f.write(json.dumps(houses))
     # house_detail = house591_spider.get_house_detail(houses[0]['post_id'])
