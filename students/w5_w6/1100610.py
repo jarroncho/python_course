@@ -96,12 +96,13 @@ if __name__ == "__main__":
     # 篩選條件
     filter_params = {
         'region': '1',  # (地區) 台北
-        'searchtype': '4',  # (位置1) 按捷運
-        'mrtline': '125',  # (位置2) 淡水信義線
-        'mrtcoods': '4198,4163',  # (位置3) 新北投 & 淡水
+        'searchtype': '1',  # (位置1) 按捷運
+        'section' : '3,8',
+        #'mrtline': '125',  # (位置2) 淡水信義線
+        #'mrtcoods': '4188,4163',  # (位置3) 新北投 & 淡水
         # 'kind': '2',  # (類型) 獨立套房
-        'multiPrice': '0_5000,5000_10000',  # (租金) 5000元以下 & 5000-10000元
-        # 'rentprice': '3000,6000',  # (自訂租金範圍) 3000~6000元
+        #'multiPrice': '20000_30000',  # (租金) 5000元以下 & 5000-10000元
+        'rentprice' : '20000,30000',  # (自訂租金範圍) 3000~6000元
         # 'multiRoom': '2,3',  # (格局) 2房 & 3房
         # 'other': 'near_subway,cook,lease',  # (特色) 近捷運 & 可開伙 & 可短期租賃
         # --- 以下要加 showMore=1 ---
@@ -122,11 +123,12 @@ if __name__ == "__main__":
     #total_count, houses = house591_spider.search(filter_params, sort_params, want_page=1)
     total_count, houses = house591_spider.search(filter_params)
     print('\n\n搜尋結果房屋總數：', total_count)
-
-    print("價格","格局")
-    print(houses[0]['price'],' ',houses[0]['room_str'],' ',houses[0]['floor_str'],'',houses[0]['title'])
+    print('價格\t格局\t樓層\t說明')
+    for i in range(len(houses)):
+        print(f"{houses[i]['price']}\t{houses[i]['room_str']}\t{houses[i]['floor_str']}\t{houses[i]['title']}")
  
-    print(houses[1])        
+    #print(houses[1])        
+
     # with open('house.json', 'w', encoding='utf-8') as f:
     #     f.write(json.dumps(houses))
 
