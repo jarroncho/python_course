@@ -2,6 +2,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
+#from . import views
 
 def simple_hello(request):
     return HttpResponse("YZU 校女籃好棒棒!!!")
