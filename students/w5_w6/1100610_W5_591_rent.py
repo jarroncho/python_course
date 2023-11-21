@@ -130,7 +130,7 @@ if __name__ == "__main__":
     #print(houses[1])        
 
     # with open('house.json', 'w', encoding='utf-8') as f:
-    #     f.write(json.dumps(houses))
+    #     f.write(json.dumps(houses))00
 
     #house_detail = house591_spider.get_house_detail(houses[0]['post_id'])
     #print(house_detail)
