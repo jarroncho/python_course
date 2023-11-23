@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.template import loader
 
 def simple_hello(request):
-    return HttpResponse("Simple Hello world!")
+    return HttpResponse("Simple Jarron Hello world!")
 
 
 def template_hello(request):
