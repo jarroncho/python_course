@@ -3,4 +3,15 @@ from django.db import models
 # Create your models here.
 class Student(models.Model):
     name = models.CharField(max_length=255)
-    student_id = models.CharField(max_length=255)
+    #student_id = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+    
+class Subject(models.Model):  
+    student = models.ForeignKey(Student, on_delete=models.CASCADE, default=1)    # type: ignore
+    name = models.CharField(max_length=255)
+    score = models.IntegerField()
+
+    
+
