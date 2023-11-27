@@ -6,8 +6,8 @@
 
 
 {% block content %}
-  <h1>Main Students</h1>
-  
+<center><h1>成績單</h1></center>
+  <center>
   <table border="solid">
     <thead>
       <tr>
@@ -19,17 +19,19 @@
       </tr>
   </thead>
   <tbody>
-    {% for x in Students %}
+
+      {% for x in Grades %}
       <tr>
-        <td>{{ x.name }}</td>
-        <td>{{ x.Chinese }}</td> 
-        <td>{{ x.English }}</td>
-        <td>{{ x.Math }}</td>  
-        <td>{{ x.Science }}</td> 
-      </tr>
-    {% endfor %}
+        <th >{{ x.student }}</th>
+        <th >{{ x.國文 }}</th>
+        <th >{{ x.英文 }}</th>
+        <th >{{ x.數學 }}</th>
+        <th >{{ x.理化 }}</th> 
+       </tr>
+      {% endfor %}
   </tbody>
   </table>
+</center>
 {% endblock %}
 
 <button 

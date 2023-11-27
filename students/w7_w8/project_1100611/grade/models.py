@@ -8,10 +8,19 @@ class Student(models.Model):
     def __str__(self):
         return self.name
     
-class Subject(models.Model):  
-    student = models.ForeignKey(Student, on_delete=models.CASCADE, default=1)    # type: ignore
-    name = models.CharField(max_length=255)
-    score = models.IntegerField()
+
+    
+class grade_list(models.Model):
+    student = models.ForeignKey(Student, on_delete=models.CASCADE,related_name='grade')
+    國文 = models.IntegerField(default=0)
+    英文 = models.IntegerField(default=0)
+    數學 = models.IntegerField(default=0)
+    理化 = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.student.name 
+    
+    
 
     
 
