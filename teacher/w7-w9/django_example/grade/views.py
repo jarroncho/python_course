@@ -63,7 +63,7 @@ def student_new(request):
         form = StudentForm()
 
     # Render the HTML template with the form
-    return render(request, 'student_form_template.html', {'form': form})
+    return render(request, 'student_new_template.html', {'form': form})
 
 
 def student_delete(request,record_id):
@@ -80,11 +80,11 @@ def student_update(request,record_id):
     if request.method == 'POST':
         # Update the record from post data
         form = StudentModelForm(request.POST, instance=record)
-        if form.is_valid():
+        if form.is_valid():            
             #update the record to the database
             form.save()
             return redirect('student_course')  # Redirect to another URL after updating
     else:
         form = StudentModelForm(instance=record)
 
-    return render(request, 'student_form_template.html', {'form': form, 'record': record})
+    return render(request, 'student_update_template.html', {'form': form, 'record': record})
