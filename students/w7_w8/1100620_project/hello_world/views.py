@@ -5,7 +5,7 @@ from django.template import loader
 
 
 def simple_hello(request):
-    return HttpResponse("Simple Hello world!")
+    return HttpResponse("Simple Sunny Hello world!")
 
 
 def template_hello(request):
