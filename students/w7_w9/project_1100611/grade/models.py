@@ -8,8 +8,9 @@ class Student(models.Model):
 
     def __str__(self):
         return self.name
-    
+      
 
+    
 class grade_list(models.Model):
     
     student = models.OneToOneField(Student, on_delete=models.CASCADE,related_name='grade')

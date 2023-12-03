@@ -40,6 +40,39 @@ def student_course(request):
     }
     return HttpResponse(template.render(context, request))
 
+
+def chinese_grade_manage(request):
+    my_students = grade_list.objects.all()
+    template = loader.get_template('chinese_course.html')
+    context = {
+        'Students': my_students,
+    }
+    return HttpResponse(template.render(context, request))
+
+def english_grade_manage(request):
+    my_students = grade_list.objects.all()
+    template = loader.get_template('english_course.html')
+    context = {
+        'Students': my_students,
+    }
+    return HttpResponse(template.render(context, request))
+
+def math_grade_manage(request):
+    my_students = grade_list.objects.all()
+    template = loader.get_template('math_course.html')
+    context = {
+        'Students': my_students,
+    }
+    return HttpResponse(template.render(context, request))
+
+def science_grade_manage(request):
+    my_students = grade_list.objects.all()
+    template = loader.get_template('science_course.html')
+    context = {
+        'Students': my_students,
+    }
+    return HttpResponse(template.render(context, request))
+
 class StudentForm(forms.Form):
     # Define your form fields here
     name = forms.CharField(label='Your Name', max_length=100)
@@ -62,7 +95,7 @@ def student_new(request):
             student_instance.save()
             print(form.cleaned_data)
             # Redirect to a new URL:
-            return redirect('student_course')
+            return redirect('student')
         
     else:
         # Display the form for the first time
@@ -77,7 +110,7 @@ def student_delete(request,record_id):
     record = get_object_or_404(grade_list, id=record_id)
     # Delete the record
     record.delete()    
-    return redirect('student_course')
+    return redirect('student')
 
 def student_update(request,record_id):
     # Get the record from the database
@@ -89,7 +122,7 @@ def student_update(request,record_id):
         if form.is_valid():            
             #update the record to the database
             form.save()
-            return redirect('student_course')  # Redirect to another URL after updating
+            return redirect('student')  # Redirect to another URL after updating
     else:
         form = StudentModelForm(instance=record)
 
