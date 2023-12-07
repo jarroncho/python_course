@@ -75,7 +75,6 @@ import openpyxl
 # Replace with the path to your Excel file
 excel_file_path = 'grade_list.xlsx'
 
-
 # Load the Excel workbook and select the sheet
 workbook = openpyxl.load_workbook(excel_file_path)
 # Get the sheet names

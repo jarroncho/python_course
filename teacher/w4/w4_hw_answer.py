@@ -4,9 +4,6 @@ import openpyxl
 from abc import ABC, abstractmethod
 
 
-
-
-
 class GradeList(ABC):
     @abstractmethod
     def fetch_grade_list(self):
