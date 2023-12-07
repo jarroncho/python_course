@@ -17,6 +17,6 @@ def main():
         ) from exc
     execute_from_command_line(sys.argv)
 
-
+#一個框架 所以是到django 底下run還竟 run manage.py
 if __name__ == '__main__':
     main()

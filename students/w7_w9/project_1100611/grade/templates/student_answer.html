@@ -1,0 +1,39 @@
+{% extends "master.html" %}
+
+{% block title %}
+ᕕ ( ᐛ ) ᕗ
+{% endblock %}
+
+
+{% block content %}
+  <h1>成績單</h1>
+  
+  <table border="solid">
+    <thead>
+      <tr>
+          <th>Name</th>
+          <th>國文</th>          
+          <th>英文</th>          
+          <th>數學</th>           
+          <th>理化</th>       
+      </tr>
+  </thead>
+  <tbody>
+    {% for x in Grades %}
+    <tr>
+      <th >{{ x.student }}</th>
+      <th >{{ x.國文 }}</th>
+      <th >{{ x.英文 }}</th>
+      <th >{{ x.數學 }}</th>
+      <th >{{ x.理化 }}</th> 
+    {% endfor %}
+  </tbody>
+  </table>
+{% endblock %}
+{% block footer %} 
+<br>
+<h4>&emsp;回輸入成績頁點👉按鈕&emsp;
+  <button onclick="window.location.href = '{% url 'student' %}';">返回</button> 
+</h4>
+<br>
+{% endblock %}

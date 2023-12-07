@@ -17,15 +17,11 @@ contents = content_2.find_all("section", {"class": "vue-list-rent-item"}) # type
 
 result = []
 for content in contents:
-    
     item = content.find("div", {"class": "rent-item-right"})
-
     # 說明
     title = item.find("div", {"class": "item-title"}).getText().strip()
-
     # 價格
     price = item.find("div", {"class": "item-price-text"}).getText().strip()
-    
     #樓層和格局
     st = item.find("ul", {"class": "item-style"})
     std=st.find_all("li")
@@ -36,6 +32,7 @@ for content in contents:
     floor=std[-1].getText().strip()    
 
     result.append((price,style,floor,title,))
+
 
 df = pd.DataFrame(result, columns=["價格", "格局","樓層","說明"])
 df.to_excel("C:\\Users\\stanley\\OneDrive\\桌面\\591_search.xlsx",sheet_name="台北",index=False)  # 匯出Excel檔案(不寫入資料索引值)
