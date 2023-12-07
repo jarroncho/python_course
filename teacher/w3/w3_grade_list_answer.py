@@ -46,7 +46,7 @@ class GradeList:
             grade_list_sort[i][7]=i+1
 
 
-grade_list=GradeList('.\\grade_list.xlsx')
+grade_list=GradeList('grade_list.xlsx')
 grade_list.fetch_grade_list()
 
 grade_list.calculate_ranking()
