@@ -16,6 +16,9 @@ tf.summary.trace_on(graph=True, profiler=True)
 # Call the function with example values
 a_value = tf.constant(3.0, dtype=tf.float32)
 b_value = tf.constant(4.0, dtype=tf.float32)
+
+#b_value = tf.Variable(4.0, dtype=tf.float32, name='b_value_name')
+
 result = add_numbers(a_value, b_value)
 
 # Use tf.summary.trace_export to save the graph to TensorBoard
