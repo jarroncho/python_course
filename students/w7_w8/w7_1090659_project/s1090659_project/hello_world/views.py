@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.template import loader
 
 def simple_hello(request):
-    return HttpResponse("1090558 Hello world!!")
+    return HttpResponse("1090659 Hello world!!")
 
 def template_hello(request):
     template = loader.get_template('first_page.html')
