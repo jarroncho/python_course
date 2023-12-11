@@ -76,6 +76,10 @@ def science_grade_manage(request):
 class StudentForm(forms.Form):
     # Define your form fields here
     name = forms.CharField(label='Your Name', max_length=100)
+    CHINESE = forms.IntegerField(label='國文')
+    英文 = forms.IntegerField(label='英文')
+    數學 = forms.IntegerField(label='數學')
+    理化 = forms.IntegerField(label='理化') 
     
 
 class StudentModelForm(forms.ModelForm):
@@ -91,8 +95,13 @@ def student_new(request):
             # Process the form data (you can save it to the database or perform other actions)
             # For now, just print the form data            
             student_instance = Student.objects.create(name=request.POST.get('name', ''))            
-            course_instance = grade_list.objects.create(student=student_instance)            
-            student_instance.save()
+            course_instance = grade_list.objects.create(student=student_instance)   
+            course_instance.國文 = request.POST.get('CHINESE', '')
+            course_instance.英文 = request.POST.get('英文', '')
+            course_instance.數學 = request.POST.get('數學', '')
+            course_instance.理化 = request.POST.get('理化', '')
+            student_instance.save()         
+            course_instance.save()
             print(form.cleaned_data)
             # Redirect to a new URL:
             return redirect('student')
