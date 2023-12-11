@@ -1,0 +1,48 @@
+{% extends "master.html" %}
+
+{% block title %}
+  ¯\_(ツ)_/¯
+{% endblock %}
+
+
+{% block content %}
+  <h1>學生成績管理</h1>
+  
+  <table border="solid">
+    <thead>
+      <tr>
+          <th>Delete</th>
+          <th>名字</th>
+          <th><a href="{% url 'chinese_course'%}">國文</th>          
+          <th><a href="{% url 'english_course'%}">英文</th>          
+          <th><a href="{% url 'math_course' %}">數學</th>           
+          <th><a href="{% url 'science_course'%}">理化</th>       
+      </tr>
+  </thead>
+  <tbody>
+    {% for x in Grades %}
+      <tr>
+        <td><a href="{% url 'student_delete_view' x.id %}">Delete</a></td>
+        <td><a href="{% url 'student_update_view' x.id %}">{{x.student}}</a></td>
+        <td>{{ x.國文 }}</td> 
+        <td>{{ x.英文 }}</td> 
+        <td>{{ x.數學 }}</td> 
+        <td>{{ x.理化 }}</td> 
+      </tr>
+    {% endfor %}
+  </tbody>
+  </table>
+{% endblock %}
+{% block footer %}  
+<br>
+<h4>&emsp;新增學生👉按鈕&emsp;&emsp;
+<button onclick="window.location.href = '{% url 'student_new_view' %}';">新增學生</button>
+</h4>
+<h4>&emsp;印成績單點👉按鈕&emsp;
+  <button onclick="window.location.href = '{% url 'student_answer' %}';">印成績單</button> 
+</h4>
+<h4>&emsp;科目管理點👉按鈕&emsp;
+  <button onclick="window.location.href = '{% url 'student_course' %}';">科目管理</button> 
+</h4>
+<br>
+{% endblock %}
