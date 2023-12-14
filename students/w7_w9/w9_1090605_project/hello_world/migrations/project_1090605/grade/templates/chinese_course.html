@@ -1,0 +1,34 @@
+{% extends "master.html" %}
+
+{% block title %}
+  國文 Chinese
+{% endblock %}
+
+
+{% block content %}
+  <h1>國文成績</h1>
+  
+  <table border="solid">
+    <thead>
+      <tr>
+          <th>名字</th>
+          <th>分數</th>               
+      </tr>
+  </thead>
+  <tbody>
+    {% for x in Students %}
+      <tr>
+        <td>{{ x.student }}</td>
+        <td>{{ x.國文 }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+  </table>
+{% endblock %}
+{% block footer %}  
+<br>
+<h4>&emsp;返回成績管理點👉按鈕&emsp;
+  <button onclick="window.location.href = '{% url 'student' %}';">成績管理</button> 
+</h4>
+<br>
+{% endblock %}

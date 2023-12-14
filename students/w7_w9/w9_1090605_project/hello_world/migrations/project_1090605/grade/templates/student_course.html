@@ -1,0 +1,24 @@
+{% extends "master.html" %}
+
+{% block title %}
+  course management
+{% endblock %}
+
+
+{% block content %}
+  <h1>科目管理</h1>
+    
+  <table border="solid">
+    <thead>
+      <tr>
+        <th><a href="{% url 'chinese_course'%}">國文</th>
+        <th><a href="{% url 'english_course'%}">英文</th>
+        <th><a href="{% url 'math_course' %}">數學</th>
+        <th><a href="{% url 'science_course'%}">理化</th>
+      </tr>
+  </thead>
+  <tbody>
+  </tbody>
+  </table>        
+    
+  {% endblock %}
