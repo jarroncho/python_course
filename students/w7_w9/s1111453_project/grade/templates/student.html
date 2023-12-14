@@ -1,0 +1,35 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Grade
+{% endblock %}
+
+
+{% block content %}
+  <h1>Main Students</h1>
+  
+  <table border="solid">
+    <thead>
+      <tr>
+          <th>名字</th>
+          <th>國文</th>
+          <th>英文</th>
+          <th>數學</th>          
+          <th>理化</th>
+      </tr>
+  </thead>
+  <tbody>
+    {% for x in Students %}
+      <tr>
+        <td>{{ x.name }}</td>
+        <td>{{ x.chinese_score }}</td>
+        <td>{{ x.english_score }}</td>
+        <td>{{ x.math_score }}</td>
+        <td>{{ x.physics_score }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+  </table>
+{% endblock %}
+
+<button 
