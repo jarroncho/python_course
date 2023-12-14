@@ -7,11 +7,19 @@ import datetime
 
 
 # mse for loss, sgd for optimizer
-use_mse = False
+use_mse = True
+use_relu = True
+if use_relu:
+    activation_function = 'relu'
+else:
+    activation_function = 'sigmoid'
+
+
 # sparse_categorical_crossentropy for loss, adam for optimizer
 if use_mse:
     loss_function = 'mse'
     optimizer_function = 'SGD'
+
     
 else:
     loss_function = 'sparse_categorical_crossentropy'
@@ -47,9 +55,9 @@ model = tf.keras.models.Sequential()
 #    model.add(tf.keras.layers.Flatten(input_shape=(28, 28), name='layers_flatten')) 
 
 # Add Input layer, 隱藏層(hidden layer) 有 64個輸出變數, another sigmoid for activation
-model.add(tf.keras.layers.Dense(units=64, input_dim=784,  kernel_initializer='normal',activation='relu', name='layers_dense')) 
+model.add(tf.keras.layers.Dense(units=64, input_dim=784,  kernel_initializer='normal',activation=activation_function, name='layers_dense')) 
 model.add(tf.keras.layers.Dropout(0.2, name='layers_dropout'))
-model.add(tf.keras.layers.Dense(units=64, kernel_initializer='normal',activation='relu', name='layers_dense_2')) 
+model.add(tf.keras.layers.Dense(units=64, kernel_initializer='normal',activation=activation_function, name='layers_dense_2')) 
 # Add output layer
 model.add(tf.keras.layers.Dense(units=10,  kernel_initializer='normal',activation='softmax', name='layers_dense_3'))
 
@@ -69,7 +77,7 @@ if use_mse:
 else:    
 # used for loss function is sparse_categorical_crossentropy    
     model.compile(loss='sparse_categorical_crossentropy', optimizer='adam', metrics=['accuracy']) 
-    train_history=model.fit(x=x_train_norm, y=y_train, epochs=5,  validation_data=(x_test_norm, y_test),batch_size=800, 
+    train_history=model.fit(x=x_train_norm, y=y_train, epochs=100,  validation_data=(x_test_norm, y_test),batch_size=800, 
                             verbose=2,callbacks=[tensorboard_callback])
     # 顯示訓練成果(分數)
     scores = model.evaluate(x_test_norm, y_test)  
