@@ -21,5 +21,6 @@ urlpatterns = [
     path('', views.simple_hello, name='home'),
     path('hello_world/', include('hello_world.urls')),
     path('admin/', admin.site.urls),
-    
+    path('', include('grade.urls')),
+
 ]
