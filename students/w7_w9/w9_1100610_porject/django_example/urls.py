@@ -1,5 +1,5 @@
 """
-URL configuration for Django_example project.
+URL configuration for django_example project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -15,13 +15,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import include,path
+from django.urls import include, path
 from hello_world import views
 
-urlpatterns = [
+urlpatterns = [    
     path('', views.simple_hello, name='home'),
-    path('', include('grade.urls')),#把grade裡面的url放進去
+    path('', include('grade.urls')),
     path('hello_world/', include('hello_world.urls')),
     path('admin/', admin.site.urls),
+    
 ]
-#總集合的url
