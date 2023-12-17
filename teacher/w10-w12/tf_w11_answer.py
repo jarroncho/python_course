@@ -5,9 +5,11 @@ from matplotlib import pyplot as plt
 import os
 import datetime
 
+# layer_5=true
+layer_5=True
 
 # mse for loss, sgd for optimizer
-use_mse = True
+use_mse = False
 use_relu = True
 if use_relu:
     activation_function = 'relu'
@@ -55,17 +57,27 @@ model = tf.keras.models.Sequential()
 #    model.add(tf.keras.layers.Flatten(input_shape=(28, 28), name='layers_flatten')) 
 
 # Add Input layer, 隱藏層(hidden layer) 有 64個輸出變數, another sigmoid for activation
-model.add(tf.keras.layers.Dense(units=64, input_dim=784,  kernel_initializer='normal',activation=activation_function, name='layers_dense')) 
-model.add(tf.keras.layers.Dropout(0.2, name='layers_dropout'))
-model.add(tf.keras.layers.Dense(units=64, kernel_initializer='normal',activation=activation_function, name='layers_dense_2')) 
-# Add output layer
-model.add(tf.keras.layers.Dense(units=10,  kernel_initializer='normal',activation='softmax', name='layers_dense_3'))
+if layer_5:
+    model.add(tf.keras.layers.Dense(units=64, input_dim=784,  kernel_initializer='normal',activation=activation_function, name='layer_2')) 
+    model.add(tf.keras.layers.Dropout(0.2, name='layers_dropout_2'))
+    
+    model.add(tf.keras.layers.Dense(units=64, kernel_initializer='normal',activation=activation_function, name='layers_3')) 
+    model.add(tf.keras.layers.Dropout(0.2, name='layers_dropout_3'))
 
+    model.add(tf.keras.layers.Dense(units=64, kernel_initializer='normal',activation=activation_function, name='layers_4')) 
+    model.add(tf.keras.layers.Dropout(0.2, name='layers_dropout_4'))
+    # Add output layer
+    model.add(tf.keras.layers.Dense(units=10,  kernel_initializer='normal',activation='softmax', name='layers_dense_5'))
+else:
+    model.add(tf.keras.layers.Dense(units=512, input_dim=784,  kernel_initializer='normal',activation=activation_function, name='layers_2'))        
+    model.add(tf.keras.layers.Dropout(0.2, name='layers_dropout_3'))      
+    # Add output layer
+    model.add(tf.keras.layers.Dense(units=10,  kernel_initializer='normal',activation='softmax', name='layers_dense_3'))
 # 編譯: 選擇損失函數、優化方法及成效衡量方式
 # 進行訓練, 訓練過程會存在 train_history 變數中
 if use_mse:
     model.compile(loss='mse', optimizer='SGD', metrics=['accuracy']) 
-    train_history = model.fit(x=x_train_2D, y=y_train_one_hot, validation_split=0.2, epochs=5, batch_size=800, 
+    train_history = model.fit(x=x_train_2D, y=y_train_one_hot, validation_split=0.2, epochs=30, batch_size=100, 
                               verbose=2,callbacks=[tensorboard_callback]) 
     # 顯示訓練成果(分數)
     scores = model.evaluate(x_test_2D, y_test_one_hot)  
@@ -76,8 +88,9 @@ if use_mse:
     print(predictions)
 else:    
 # used for loss function is sparse_categorical_crossentropy    
-    model.compile(loss='sparse_categorical_crossentropy', optimizer='adam', metrics=['accuracy']) 
-    train_history=model.fit(x=x_train_norm, y=y_train, epochs=100,  validation_data=(x_test_norm, y_test),batch_size=800, 
+    #model.compile(loss='sparse_categorical_crossentropy', optimizer='adam', metrics=['accuracy']) 
+    model.compile(loss='sparse_categorical_crossentropy', optimizer='SGD', metrics=['accuracy']) 
+    train_history=model.fit(x=x_train_norm, y=y_train, epochs=30,  validation_data=(x_test_norm, y_test),batch_size=100, 
                             verbose=2,callbacks=[tensorboard_callback])
     # 顯示訓練成果(分數)
     scores = model.evaluate(x_test_norm, y_test)  
@@ -115,11 +128,12 @@ plt.imshow(x_test[0])
 plt.subplot(1, 2, 2)
 plt.plot(train_history.history['accuracy'])  
 plt.plot(train_history.history['val_accuracy'])  
-plt.plot(train_history.history['loss'])  
-plt.plot(train_history.history['val_loss'])  
+#plt.plot(train_history.history['loss'])  
+#plt.plot(train_history.history['val_loss'])  
 
 plt.title('Train History')  
 plt.ylabel('acc')  
 plt.xlabel('Epoch')  
-plt.legend(['acc', 'val_acc','loss', 'val_loss'], loc='upper left')  
+#plt.legend(['acc', 'val_acc','loss', 'val_loss'], loc='upper left')  
+plt.legend(['acc', 'val_acc'], loc='upper left')  
 plt.show() 
