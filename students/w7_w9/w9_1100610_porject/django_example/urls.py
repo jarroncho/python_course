@@ -23,5 +23,5 @@ urlpatterns = [
     path('', include('grade.urls')),
     path('hello_world/', include('hello_world.urls')),
     path('admin/', admin.site.urls),
-    
+    #對應的網頁 是個韓數
 ]
