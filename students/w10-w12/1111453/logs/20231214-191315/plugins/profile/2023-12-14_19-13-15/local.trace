@@ -1,152 +1,0 @@
-
-Œ‡
-/device:GPU:0
-Stream #14(MemcpyH2D)
-Stream #15(MemcpyD2H)
-Stream #13(Compute)
-Stream #7(Memset)
-àõÚ
-	/host:CPUõç²éï
-llvm-worker-5ç²éï¿Ü„Û
-llvm-worker-3¿Ü„ÛÀ¶Ÿî
-llvm-worker-4À¶Ÿî¢¿ €
-llvm-worker-2¢¿ €É¬ç	
-llvm-worker-8É¬ç	(Ô¢¦ÿ
- 
-tf_Compute/-1343647404Ô¢¦ÿ
-
-õ¿š
-llvm-worker-1õ¿šÁëø—
-llvm-worker-0Áëø—Øï¢Í
-pythonØï¢Í	Ÿÿ²û
-llvm-worker-7Ÿÿ²û"NõÁëø—main_kernel_3Hè€…¿PğßıãZ'
-	long_nameCompiling IR:main_kernel_3"Nõõ¿šmain_kernel_2H¨ˆ—ÍPÈ±ÊZ'
-	long_nameCompiling IR:main_kernel_2"Nõ¢¿ €main_kernel_5HĞäæÌPˆÂ·Õ"Z'
-	long_nameCompiling IR:main_kernel_5"Jõ¿Ü„Ûmain_kernelH°ã¾P¸Èœ³Z%
-	long_nameCompiling IR:main_kernel"NõÀ¶Ÿîmain_kernel_1HØïÉ½PøšºµZ'
-	long_nameCompiling IR:main_kernel_1"Nõç²éïmain_kernel_6H€¢÷ÌPè‹œ¦#Z'
-	long_nameCompiling IR:main_kernel_6"NõŸÿ²ûmain_kernel_0HèØ¾¾P°íß°Z'
-	long_nameCompiling IR:main_kernel_0"NõÉ¬ç	main_kernel_4H­½ËP¨é”Z'
-	long_nameCompiling IR:main_kernel_4"#õØï¢Ítf.constantH€ı‰Õ6PøØ£ÎÜ"KõØï¢ÍEagerExecuteH ıõì6Pˆ¿¬ÜZ
-is_func0Z
-eager_op_EagerConst"6õØï¢ÍEagerLocalExecute: _EagerConstHĞàî6PÈê»ªÜ"'õØï¢ÍEagerCopyToDeviceHˆ Æù6Pà÷"5õØï¢ÍValidateInputTypeAndPlacementH¾Øî8Pà’ú™Ù"‡õØï¢Ío_Send input 0 from /job:localhost/replica:0/task:0/device:CPU:0 to /job:localhost/replica:0/task:0/device:GPU:0H˜”ğï8PºÁ˜Ù"0õØï¢ÍDeviceMemAllocator::AllocH°³İñ8Pøè®±"“õØï¢ÍcuMemAlloc_v2H ş˜÷8PàÉĞªZ
-correlation_id1Z
-	device_id0Z5
-memalloc_details!kind:unknown num_bytes:5404622848Z
-
-context_id$$1"£õØï¢Í	MemcpyH2DH€Ù†º‘P€«†Z
-correlation_id2ZI
-memcpy_details7kind_src:unknown kind_dst:unknown size:4 dest:0 async:1Z
-	device_id0Z
-
-context_id$$1"*õØï¢ÍEagerKernelExecuteHˆªƒŠ’P¸üÒ"0õØï¢ÍKernelAndDeviceFunc::RunH¸„±‹’P¨û€…"‹õØï¢ÍMemsetHĞÏ—Â’PèœêZ
-correlation_id3Z
-
-context_id$$1Z4
-Memset_details"kind:unknown num_bytes:257 async:0Z
-	device_id0",õØï¢ÍTFE_DeleteTensorHandleHè®¸›“PÀş>""õØï¢Ítf.constantHé²“P°â»3"JõØï¢ÍEagerExecuteHè¼ßÄ“P€è§Z
-is_func0Z
-eager_op_EagerConst"5õØï¢ÍEagerLocalExecute: _EagerConstHĞº‰Æ“Pè÷"(õØï¢ÍEagerCopyToDeviceHè€äÉ“P¨Ô¢"4õØï¢ÍValidateInputTypeAndPlacementHˆ¼¥Í“Pˆšø"†õØï¢Ío_Send input 0 from /job:localhost/replica:0/task:0/device:CPU:0 to /job:localhost/replica:0/task:0/device:GPU:0Hà´Î“PĞê‚"£õØï¢Í	MemcpyH2DH€ŞÑÒ“Pˆ‡ÕZ
-
-context_id$$1ZI
-memcpy_details7kind_src:unknown kind_dst:unknown size:4 dest:0 async:1Z
-correlation_id4Z
-	device_id0")õØï¢ÍEagerKernelExecuteHˆÒ»ß“Pø•³"/õØï¢ÍKernelAndDeviceFunc::RunH°šåß“P¨…à",õØï¢ÍTFE_DeleteTensorHandleHşÔä“PÀí""õØï¢Ítf.constantHØ¦„ê“Pğôâ"JõØï¢ÍEagerExecuteH¸­ğ“P¸öÈZ
-eager_op_EagerConstZ
-is_func0"5õØï¢ÍEagerLocalExecute: _EagerConstHş°ğ“P°Ê "'õØï¢ÍEagerCopyToDeviceHøîˆò“Pˆ2"4õØï¢ÍValidateInputTypeAndPlacementHˆ«Œó“P"†õØï¢Ío_Send input 0 from /job:localhost/replica:0/task:0/device:CPU:0 to /job:localhost/replica:0/task:0/device:GPU:0HĞ¼¨ó“PĞÓé"£õØï¢Í	MemcpyH2DHèÕ‘÷“P¶ÿZ
-
-context_id$$1Z
-	device_id0ZI
-memcpy_details7kind_src:unknown kind_dst:unknown size:4 dest:0 async:1Z
-correlation_id5")õØï¢ÍEagerKernelExecuteHè’³”P¨ø"/õØï¢ÍKernelAndDeviceFunc::RunHè£×”P¸³Á",õØï¢ÍTFE_DeleteTensorHandleH¨Ë¦†”PøŠ"ZõØï¢Íadd_numbersHğñê ”Pø•ÉşDZ!
-tf_function_calltraced-nonXlaZ
-tracing_count1"2õØï¢Ítf.function-graph_buildingHğ›ÁĞ•P€°Š‹1"(õØï¢Íconvert_to_tensorHˆÇ»ïÁP˜¡–"(õØï¢Íconvert_to_tensorHøÑÂPğ·ô"(õØï¢Íconvert_to_tensorHğ€ˆÃPğÇÈ"(õØï¢Íconvert_to_tensorH°÷î•ÃPàĞ¨"(õØï¢Íconvert_to_tensorH€ÖˆôÃPˆşİ"(õØï¢Íconvert_to_tensorH¸ÿï£ÄPˆ©¦"0õØï¢ÍTFE_Py_ExecuteCancelableHÈ·©ÂÇPî‡Ò"ZõØï¢ÍEagerExecuteHğäÀËÇPØÊ©ÈZ
-is_func1Z&
-eager_op__inference_add_numbers_16"EõØï¢Í-EagerLocalExecute: __inference_add_numbers_16HÀÀûËÇP°ñÛÇ"'õØï¢ÍEagerCopyToDeviceH˜ÆµÌÇP˜Ş["3õØï¢ÍValidateInputTypeAndPlacementH°¼ÂœÑP˜‰$"*õØï¢ÍEagerKernelExecuteHÀ£ÑPğ¯©ö"0õØï¢ÍKernelAndDeviceFunc::RunHğ€¾ÑPØØë"=õØï¢ÍFunctionRunHè÷¦ËÑPĞÄZ
-id-730023768679972719""õØï¢Ítf.constantHÈ¤ËäÙPÀŒÌ",õØï¢ÍTFE_DeleteTensorHandleHº¤ìÙP’"1õØï¢ÍTFE_Py_FastPathExecute_CHàÊÄıÙP°Ø÷Î"KõØï¢ÍEagerExecuteH˜ËˆÚPø³¿ÍZ
-is_func0Z
-eager_op_EagerConst"6õØï¢ÍEagerLocalExecute: _EagerConstH¸¼ºˆÚPàŠüÌ"'õØï¢ÍEagerCopyToDeviceHà²ŸŒÚPØÒJ"4õØï¢ÍValidateInputTypeAndPlacementHÔ‘¤ÛP¨ö±"†õØï¢Ío_Send input 0 from /job:localhost/replica:0/task:0/device:CPU:0 to /job:localhost/replica:0/task:0/device:GPU:0H€ÌÍ¤ÛPøãé"£õØï¢Í	MemcpyH2DH˜Õâ©ÛP°“’Z
-correlation_id7Z
-
-context_id$$1ZI
-memcpy_details7kind_src:unknown kind_dst:unknown size:1 dest:0 async:1Z
-	device_id0")õØï¢ÍEagerKernelExecuteHà°ã¸ÛPˆ÷¸"/õØï¢ÍKernelAndDeviceFunc::RunH¨¤‰¹ÛPĞ—ß",õØï¢ÍTFE_DeleteTensorHandleH€Ê‹ÖÛP¨×$",õØï¢ÍTFE_DeleteTensorHandleH¸Î¸×ÛP¸",õØï¢ÍTFE_DeleteTensorHandleHèÓ®ØÛPĞ†"KõØï¢ÍEagerExecuteH€‹ÙÛPÈ¶…ï‹Z
-eager_op
-LogicalAndZ
-is_func0"6õØï¢ÍEagerLocalExecute: LogicalAndH˜½ÙÛP˜ï¤î‹"'õØï¢ÍEagerCopyToDeviceHĞ¾‚ÜÛPöF"3õØï¢ÍValidateInputTypeAndPlacementHĞÛÈöÜPˆÊ"+õØï¢ÍEagerKernelExecuteHĞ¡…÷ÜPĞ®ÔÏŠ"1õØï¢ÍKernelAndDeviceFunc::RunHè›®÷ÜPˆáïÃŠ"ZõØï¢Ímain_kernelHàæğ§çPÈÔÁZ
-	device_id0Z
-
-context_id$$1Z
-correlation_id8"bõØï¢ÍcuStreamSynchronizeHà›ğÙçPˆ¸¡Z
-correlation_id9Z
-	device_id0Z
-
-context_id$$1"¤õØï¢Í	MemcpyD2HHˆèÖáçPà–Ğ	Z
-
-context_id$$1Z
-correlation_id10ZI
-memcpy_details7kind_src:unknown kind_dst:unknown size:1 dest:0 async:1Z
-	device_id0"(õØï¢Íconvert_to_tensorHøğßûèP ìş"0õØï¢ÍTFE_Py_FastPathExecute_CH¨‘µ„éPÀê¾˜"HõØï¢ÍEagerExecuteH€•™“éP¨±ÚˆZ
-eager_opIdentityZ
-is_func0"3õØï¢ÍEagerLocalExecute: IdentityH€ÉØ”éP°Ô‹‡"(õØï¢ÍEagerCopyToDeviceHˆ°ÿœéP¹"3õØï¢ÍValidateInputTypeAndPlacementHğúëP˜§")õØï¢ÍEagerKernelExecuteHˆÙİëP úç"/õØï¢ÍKernelAndDeviceFunc::RunH ŠÈ‚ëPèŸ¹"/õØï¢ÍTFE_Py_FastPathExecute_CHÀã¨¢ëP˜ûã"(õØï¢Íconvert_to_tensorHĞÌÕºëPğÎ‡"(õØï¢Íconvert_to_tensorHˆª÷ÃëPèú/""õØï¢Ítf.constantHÈ‚­çëPà€‡",õØï¢ÍTFE_DeleteTensorHandleH˜¸µîëP¨æ"(õØï¢Íconvert_to_tensorHÀÆŒôëP¨®ğ""õØï¢Ítf.constantHğáËöëP¨İ™",õØï¢ÍTFE_DeleteTensorHandleHÈãªùëPÀ©"(õØï¢Íconvert_to_tensorH°¾¤€ìP¨‰ù""õØï¢Ítf.constantHÀîûìPˆÚã",õØï¢ÍTFE_DeleteTensorHandleH˜òƒ”ìP ş
-"0õØï¢ÍTFE_Py_ExecuteCancelableHˆÔá™ìP¸¤©İ"LõØï¢ÍEagerExecuteH€£ÿìPàºË×Z
-is_func0Z
-eager_opWriteSummary"7õØï¢ÍEagerLocalExecute: WriteSummaryHĞş¹ŸìP€¾×"(õØï¢ÍEagerCopyToDeviceH¨ò ìP€Åã"3õØï¢ÍValidateInputTypeAndPlacementH¨²‡×íPğ•2")õØï¢ÍEagerKernelExecuteHĞüÙ×íPè¶½"/õØï¢ÍKernelAndDeviceFunc::RunH€¼“ØíP°Âó",õØï¢ÍTFE_DeleteTensorHandleH¸˜øíPØ£0",õØï¢ÍTFE_DeleteTensorHandleH˜îğøíP˜Ô",õØï¢ÍTFE_DeleteTensorHandleH°•‹ùíPğ¢""õØï¢Ítf.constantHàúÒşíP¨Œ®",õØï¢ÍTFE_DeleteTensorHandleHğÆ›ƒîPˆ†",õØï¢ÍTFE_DeleteTensorHandleHÈğÀ†îPˆ•"-õØï¢ÍTFE_DeleteTensorHandleHğåÛ†îPÈòÌ",õØï¢ÍTFE_DeleteTensorHandleH¸¦ıîPø™",õØï¢ÍTFE_DeleteTensorHandleH ¶¤îPğ¢"XõÔ¢¦ÿ
-ExecutorState::ProcessHĞí”ÓÑP¨½°Z
-id-730023768679972719Z
-iter_num0"
-õÔ¢¦ÿ
-¿	void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, long>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_sum_op<float, float>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_sum_op<float const, float const>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, long>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_sum_op<float, float>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_sum_op<float const, float const>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long)HğîˆïØPÌ¤Z
-correlation_id6Z
-	device_id0Z
-
-context_id$$1"FõÔ¢¦ÿ
-ExecutorDoneCallbackH¸í•„ÙPğœ€Z
-id-730023768679972719"«	MemcpyH2DH ß¨é‘P€ìYZ
-correlation_id2Z
-	edge_namecopyZ
-
-context_id$$1ZI
-memcpy_details7kind_src:pageable kind_dst:device size:4 dest:0 async:1Z	
-tf_op "«	MemcpyH2DHÀÊÖ“P€Ş4ZI
-memcpy_details7kind_src:pageable kind_dst:device size:4 dest:0 async:1Z
-	edge_namecopyZ
-
-context_id$$1Z	
-tf_op Z
-correlation_id4"«	MemcpyH2DHÀÌÇú“P€Ş4ZI
-memcpy_details7kind_src:pageable kind_dst:device size:4 dest:0 async:1Z
-	edge_namecopyZ
-
-context_id$$1Z
-correlation_id5Z	
-tf_op "«	MemcpyH2DHˆ—¤®ÛPèë2ZI
-memcpy_details7kind_src:pageable kind_dst:device size:1 dest:0 async:1Z	
-tf_op Z
-correlation_id7Z
-	edge_namecopyZ
-
-context_id$$1"wMemset 3Hğ¬›È’P€Ø6Z
-correlation_id3Z4
-Memset_details"kind:device num_bytes:1028 async:0Z
-
-context_id$$1"¿	void Eigen::internal::EigenMetaKernel<Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, long>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_sum_op<float, float>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_sum_op<float const, float const>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long>(Eigen::TensorEvaluator<Eigen::TensorAssignOp<Eigen::TensorMap<Eigen::Tensor<float, 1, 1, long>, 16, Eigen::MakePointer>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_sum_op<float, float>, Eigen::TensorCwiseBinaryOp<Eigen::internal::scalar_sum_op<float const, float const>, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const, Eigen::TensorMap<Eigen::Tensor<float const, 1, 1, long>, 16, Eigen::MakePointer> const> const> const, Eigen::GpuDevice>, long)Hèï¡şØP€ÒµZ5
-tf_op,ArithmeticOptimizer/AddOpsRewrite_add_1:AddNZ
-correlation_id6Z$
-theoretical_occupancy_pct66.6667Z
-
-context_id$$1Z
-occupancy_min_grid_size92Z%
-occupancy_suggested_block_size768"±main_kernelH˜²›°çP€¬˜Z
-occupancy_min_grid_size92Z$
-theoretical_occupancy_pct66.6667Z%
-occupancy_suggested_block_size768Z
-
-context_id$$1Z
-correlation_id8"¬	MemcpyD2HH€£èçP€æ[Z
-
-context_id$$1ZI
-memcpy_details7kind_src:device kind_dst:pageable size:1 dest:0 async:1Z	
-tf_op Z
-	edge_namecopyZ
-correlation_id10

@@ -1,64 +1,0 @@
-
-cõ^
-	/host:CPUõªÙ	
-tf_Compute/158890ªÙ	¨Ù	
-tf_Compute/158888¨Ù	Ù	Ù	" õÙ	tf.constantH€ØñP€›…Ô—"HõÙ	EagerExecuteHÀ¿í!PÀ¾Ö¼—Z
-is_func0Z
-eager_op_EagerConst"3õÙ	EagerLocalExecute: _EagerConstH€Äª"PÀµÜ»—"#õÙ	EagerCopyToDeviceH€ú†(PÀ„="3õÙ	ValidateInputTypeAndPlacementH€Ò¹P€å–Ú•"…õÙ	o_Send input 0 from /job:localhost/replica:0/task:0/device:CPU:0 to /job:localhost/replica:0/task:0/device:GPU:0HÀÖ¾¹P€ÜœÙ•"-õÙ	DeviceMemAllocator::AllocH€äõºP€ùák"'õÙ	EagerKernelExecuteH€À’”—PÀ¹ôI"-õÙ	KernelAndDeviceFunc::RunH€ÉŒ•—P€Òø>"*õÙ	TFE_DeleteTensorHandleH€¸à—PÀ„="!õÙ	tf.constantHÀìæ÷—PÀ”ç‰"HõÙ	EagerExecuteH€“¹‰˜PÀÎétZ
-eager_op_EagerConstZ
-is_func0"3õÙ	EagerLocalExecute: _EagerConstH€œ³Š˜PÀÅïs"%õÙ	EagerCopyToDeviceH€·¡˜P€‰z"2õÙ	ValidateInputTypeAndPlacementHÀÖÌ˜PÀâ°i"„õÙ	o_Send input 0 from /job:localhost/replica:0/task:0/device:CPU:0 to /job:localhost/replica:0/task:0/device:GPU:0H€Û‰‘˜P€Şóh".õÙ	DeviceMemAllocator::AllocH€äƒ’˜PÀÕ‡	"'õÙ	EagerKernelExecuteHÀ½ºú˜P€¤è"-õÙ	KernelAndDeviceFunc::RunHÀ½ºú˜PÀŸ«"*õÙ	TFE_DeleteTensorHandleHÀêœÿ˜PÀ„="!õÙ	tf.constantH€®°†™PÀ¿ö›"IõÙ	EagerExecuteHÀèÉŒ™P€êî’Z
-is_func0Z
-eager_op_EagerConst"4õÙ	EagerLocalExecute: _EagerConstH€í†™PÀå±’"%õÙ	EagerCopyToDeviceH€ÿú™PÀ„="3õÙ	ValidateInputTypeAndPlacementH€ˆõ™P€¢‹"…õÙ	o_Send input 0 from /job:localhost/replica:0/task:0/device:CPU:0 to /job:localhost/replica:0/task:0/device:GPU:0HÀŒ²™PÀáŠ".õÙ	DeviceMemAllocator::AllocHÀŒ²™P€­â"'õÙ	EagerKernelExecuteHÀ®Ğ›šP€¤è"-õÙ	KernelAndDeviceFunc::RunH€³œšP€›î"&õÙ	TFE_DeleteTensorHandleHÀÛ² š"YõÙ	add_numbersHÀ³¤·šP€×¸ÉèZ!
-tf_function_calltraced-nonXlaZ
-tracing_count1"0õÙ	tf.function-graph_buildingHÀŞ¼Ã›P€ª¡à<"&õÙ	convert_to_tensorH€ õ‹ÑP€›î"&õÙ	convert_to_tensorH€İøŸÑP€›î"&õÙ	convert_to_tensorH€•ºŒÓPÀ·"&õÙ	convert_to_tensorHÀ—¤šÓPÀ–±"%õÙ	convert_to_tensorHÀÕÕäÓP€‰z"%õÙ	convert_to_tensorH€Â¥‹ÔPÀ„="/õÙ	TFE_Py_ExecuteCancelableH€³ß”ÙPÀÜÈ©"YõÙ	EagerExecuteH€¤ÙP€õÌ‚©Z
-is_func1Z&
-eager_op__inference_add_numbers_16"DõÙ	-EagerLocalExecute: __inference_add_numbers_16H€Ÿ˜ ÙPÀŞ›€©"&õÙ	EagerCopyToDeviceHÀ£Õ ÙPÀ·"1õÙ	ValidateInputTypeAndPlacementH€§ì¿PÀ„=")õÙ	EagerKernelExecuteHÀ´£ÁP€À–Şä"/õÙ	KernelAndDeviceFunc::RunH€¹àÁP€§ûÍä"<õÙ	FunctionRunHÀı¡ÿPÀ“nZ
-id-3417711192417398447" õÙ	tf.constantHÀİƒöƒP€‡§"&õÙ	TFE_DeleteTensorHandleHÀÛ°ƒ„"/õÙ	TFE_Py_FastPathExecute_CH€¯å™„PÀÕÚÊã"IõÙ	EagerExecuteH€ãî¬„PÀìüˆZ
-eager_op_EagerConstZ
-is_func0"4õÙ	EagerLocalExecute: _EagerConstH€ìè­„PÀã‚ˆ"%õÙ	EagerCopyToDeviceH€Æ­·„P€‰z"3õÙ	ValidateInputTypeAndPlacementH€Áë†PÀ¸á"…õÙ	o_Send input 0 from /job:localhost/replica:0/task:0/device:CPU:0 to /job:localhost/replica:0/task:0/device:GPU:0HÀÅ¨†PÀ¯ç€".õÙ	DeviceMemAllocator::AllocHÀÎ¢‘†PÀ”Ş"'õÙ	EagerKernelExecuteH€ş‰’‰PÀÑá#"-õÙ	KernelAndDeviceFunc::RunHÀ‚Ç’‰PÀ¤ÿ"*õÙ	TFE_DeleteTensorHandleH€Ô¨¶‰PÀ„="&õÙ	TFE_DeleteTensorHandleH€æœ¸‰"&õÙ	TFE_DeleteTensorHandleH€ï–¹‰"IõÙ	EagerExecuteHÀóÓ¹‰PÀèÆ¦ŞZ
-is_func0Z
-eager_op
-LogicalAnd"4õÙ	EagerLocalExecute: LogicalAndH€øº‰PÀßÌ¥Ş"%õÙ	EagerCopyToDeviceH€“ÿ¼‰PÀ„="-õÙ	ValidateInputTypeAndPlacementH€ÌååŠ")õÙ	EagerKernelExecuteHÀĞ¢æŠP€şÀøÜ"/õÙ	KernelAndDeviceFunc::RunHÀĞ¢æŠPÀ–ÅíÜ".õÙ	DeviceMemAllocator::AllocH€´ø‹‹PÀ±Ÿ"&õÙ	convert_to_tensorH€•¥ñì
-PÀ±Ÿ".õÙ	TFE_Py_FastPathExecute_CH€İõøì
-PÀşÕœ"FõÙ	EagerExecuteH€äœ‡í
-PÀî´Z
-is_func0Z
-eager_opIdentity"1õÙ	EagerLocalExecute: IdentityH€ö‰í
-PÀÜÀ‹"&õÙ	EagerCopyToDeviceH€âÉ”í
-P€’ô"-õÙ	ValidateInputTypeAndPlacementH€ÉÀøî
-"'õÙ	EagerKernelExecuteH€Òºùî
-PÀ€—"-õÙ	KernelAndDeviceFunc::RunHÀÖ÷ùî
-P€½ƒ"-õÙ	TFE_Py_FastPathExecute_CHÀ‘¨›ï
-PÀÃ“"&õÙ	convert_to_tensorHÀŞ¢ğ
-P€ÑÊ"&õÙ	convert_to_tensorHÀé¢¬ğ
-P€ú†(" õÙ	tf.constantHÀ÷ğÈğ
-P€ÑÊ"&õÙ	TFE_DeleteTensorHandleHÀ¿ÁĞğ
-"&õÙ	convert_to_tensorH€èæÔğ
-PÀÃ“" õÙ	tf.constantH€úÚÖğ
-PÀŸ«"*õÙ	TFE_DeleteTensorHandleH€•ÉÙğ
-PÀ„="&õÙ	convert_to_tensorH€°·Üğ
-P€«" õÙ	tf.constantHÀ²¡êğ
-P€›î"&õÙ	TFE_DeleteTensorHandleH€ÉÒìğ
-".õÙ	TFE_Py_ExecuteCancelableHÀñ÷ğğ
-PÀÿúØ"JõÙ	EagerExecuteHÀŒæóğ
-PÀäŒÖZ
-is_func0Z
-eager_opWriteSummary"5õÙ	EagerLocalExecute: WriteSummaryH€‘£ôğ
-PÀÛ’Õ"&õÙ	EagerCopyToDeviceH€£—öğ
-P€’ô"-õÙ	ValidateInputTypeAndPlacementHÀºÿ¨ò
-"'õÙ	EagerKernelExecuteH€¿¼©ò
-PÀ­ù"-õÙ	KernelAndDeviceFunc::RunH€¿¼©ò
-PÀ÷œ"*õÙ	TFE_DeleteTensorHandleH€úìÊò
-PÀ„="*õÙ	TFE_DeleteTensorHandleHÀş©Ëò
-PÀ„="&õÙ	TFE_DeleteTensorHandleH€ƒçËò
-" õÙ	tf.constantHÀ«ŒĞò
-P€¤è"&õÙ	TFE_DeleteTensorHandleH€Ë·Óò
-"*õÙ	TFE_DeleteTensorHandleHÀáèÕò
-PÀ„="+õÙ	TFE_DeleteTensorHandleH€æ¥Öò
-P€’ô",õÙ	DeviceMemAllocator::FreeHÀêâÖò
-P€‰z"*õÙ	TFE_DeleteTensorHandleH€®öİò
-PÀ„="&õÙ	TFE_DeleteTensorHandleHÀ²³Şò
-"Xõ¨Ù	ExecutorState::ProcessH€Ó²‚ŸP€ôıâZ
-id-3417711192417398447Z
-iter_num0".õ¨Ù	DeviceMemAllocator::AllocHÀ¸ÛšŸP€™›"EõªÙ	ExecutorDoneCallbackH€Ù´‚P€­âZ
-id-3417711192417398447
