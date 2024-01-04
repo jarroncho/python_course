@@ -162,4 +162,4 @@ cython_debug/
 
 teacher/w10-w12/logs
 student/w10-w12/logs
-
+student/w10-w12/*/logs
