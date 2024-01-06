@@ -1,5 +1,5 @@
 """
-WSGI config for s1090545_w8_project project.
+WSGI config for w9_1090545_project project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 's1090558_w8_project.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'w9_1090545_project.settings')
 
 application = get_wsgi_application()

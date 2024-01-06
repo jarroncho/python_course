@@ -1,5 +1,5 @@
 """
-URL configuration for s1090545_w8_project project.
+URL configuration for w9_1090545_project project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -15,10 +15,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import include, path
-from grade_list import views
+from django.urls import path, include
 
 urlpatterns = [
-    path('', include('grade_list.urls')),
+    path('', include('w9_grade.urls')),
     path('admin/', admin.site.urls),
 ]
