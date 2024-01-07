@@ -1,5 +1,5 @@
 """
-ASGI config for s1090558_w8_project project.
+ASGI config for s1090545_w8_project project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 

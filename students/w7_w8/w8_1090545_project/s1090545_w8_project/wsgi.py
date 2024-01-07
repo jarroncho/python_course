@@ -1,5 +1,5 @@
 """
-WSGI config for s1090558_w8_project project.
+WSGI config for s1090545_w8_project project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
