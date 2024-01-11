@@ -1,5 +1,6 @@
 import tensorflow as tf
 from datetime import datetime
+import os
 
 # Define a simple function to add two numbers
 @tf.function
@@ -31,7 +32,8 @@ with writer.as_default():
 
 # Print the result
 print(f'The sum of {a_value.numpy()} and {b_value.numpy()} is: {result.numpy()}')
-
+full_path = os.path.abspath(log_dir)
+print(full_path)
 # To launch TensorBoard, use the following command in the terminal:
 # tensorboard --logdir=path_to_logs_directory
 # Replace "path_to_logs_directory" with the actual path to your logs directory.
