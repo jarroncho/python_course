@@ -20,6 +20,8 @@ from hello_world import views
 
 urlpatterns = [
     path('', views.simple_hello, name='home'),
+    path('', include('grade.urls')),#把grade裡面的url放進去
     path('hello_world/', include('hello_world.urls')),
     path('admin/', admin.site.urls),
 ]
+#總集合的url
