@@ -8,10 +8,18 @@ import datetime
 
 # mse for loss, sgd for optimizer
 use_mse = False
+use_relu = True
+if use_relu:
+    activation_function = 'relu'
+else:
+    activation_function = 'sigmoid'
+
+
 # sparse_categorical_crossentropy for loss, adam for optimizer
 if use_mse:
     loss_function = 'mse'
     optimizer_function = 'SGD'
+
     
 else:
     loss_function = 'sparse_categorical_crossentropy'
@@ -19,7 +27,7 @@ else:
     
 
 # 載入 MNIST 資料庫的訓練資料，並自動分為『訓練組』及『測試組』
-(x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
+(x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()  # type: ignore
 
 
 # 將 training 的 input 資料轉為1維
@@ -31,32 +39,41 @@ x_train_norm = x_train_2D/255.0
 x_test_norm = x_test_2D/255.0
 
 # 將 training 的 label 進行 one-hot encoding，例如數字 7 經過 One-hot encoding 轉換後是 0000001000，即第7個值為 1
-y_train_one_hot = tf.keras.utils.to_categorical(y_train) 
-y_test_one_hot = tf.keras.utils.to_categorical(y_test) 
+y_train_one_hot = tf.keras.utils.to_categorical(y_train) # type: ignore
+y_test_one_hot = tf.keras.utils.to_categorical(y_test) #type: ignore
 
-
+#C:\Users\stanley\OneDrive\文件\GitHub\python_course\students\w10_w12\w11_1100610\logs
 #tfboard lordir
-log_dir = "logs2\\fit\\" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
-tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir, histogram_freq=1)
+#log_dir ="C:\\Users\\stanley\\OneDrive\\文件\\GitHub\\python_course\\students\\w10_w12\\w11_1100610\\logs\\fit\\" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+# 確保目錄存在
+log_dir = "C:\\Users\\stanley\\OneDrive\\文件\\GitHub\\python_course\\students\\w10_w12\\w11_1100610\\logs\\fit\\" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+os.makedirs(log_dir, exist_ok=True)
 
+# 使用 TensorBoard 回呼
+tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1)
 
 # 建立簡單的線性執行的模型
-model = tf.keras.models.Sequential()
+model = tf.keras.models.Sequential()    # type: ignore
 # training 的 input 資料轉為1維  28*28=784
 #if not use_mse:
 #    model.add(tf.keras.layers.Flatten(input_shape=(28, 28), name='layers_flatten')) 
 
-# Add Input layer, 隱藏層(hidden layer) 有 512個輸出變數, another sigmoid for activation
-model.add(tf.keras.layers.Dense(units=512, input_dim=784,  kernel_initializer='normal',activation='relu', name='layers_dense')) 
-
+# Add Input layer, 隱藏層(hidden layer) 有 64個輸出變數, another sigmoid for activation
+model.add(tf.keras.layers.Dense(units=768, input_dim=784,  kernel_initializer='normal',activation=activation_function, name='layers_dense'))  # type: ignore
+model.add(tf.keras.layers.Dropout(0.2, name='layers_dropout2'))  # type: ignore
+model.add(tf.keras.layers.Dense(units=64, kernel_initializer='normal',activation=activation_function, name='layers_dense_2')) #type: ignore
+model.add(tf.keras.layers.Dropout(0.2, name='layers_dropout3'))  # type: ignore
+model.add(tf.keras.layers.Dense(units=64, kernel_initializer='normal',activation=activation_function, name='layers_dense_3')) #type: ignore
+model.add(tf.keras.layers.Dropout(0.2, name='layers_dropout4'))  # type: ignore
+model.add(tf.keras.layers.Dense(units=64, kernel_initializer='normal',activation=activation_function, name='layers_dense_4'))   #type: ignore
 # Add output layer
-model.add(tf.keras.layers.Dense(units=10,  kernel_initializer='normal',activation='softmax', name='layers_dense_3'))
+model.add(tf.keras.layers.Dense(units=10,  kernel_initializer='normal',activation='softmax', name='layers_dense_5'))    # type: ignore
 
 # 編譯: 選擇損失函數、優化方法及成效衡量方式
 # 進行訓練, 訓練過程會存在 train_history 變數中
 if use_mse:
     model.compile(loss='mse', optimizer='SGD', metrics=['accuracy']) 
-    train_history = model.fit(x=x_train_2D, y=y_train_one_hot, validation_split=0.2, epochs=5, batch_size=100, 
+    train_history = model.fit(x=x_train_2D, y=y_train_one_hot, validation_split=0.2, epochs=10, batch_size=100, 
                               verbose=2,callbacks=[tensorboard_callback]) 
     # 顯示訓練成果(分數)
     scores = model.evaluate(x_test_2D, y_test_one_hot)  
@@ -68,7 +85,7 @@ if use_mse:
 else:    
 # used for loss function is sparse_categorical_crossentropy    
     model.compile(loss='sparse_categorical_crossentropy', optimizer='SGD', metrics=['accuracy']) 
-    train_history=model.fit(x=x_train_norm, y=y_train, epochs=30,  validation_data=(x_test_norm, y_test),batch_size=100, 
+    train_history=model.fit(x=x_train_norm, y=y_train, epochs=20,  validation_data=(x_test_norm, y_test),batch_size=64, 
                             verbose=2,callbacks=[tensorboard_callback])
     # 顯示訓練成果(分數)
     scores = model.evaluate(x_test_norm, y_test)  
